@@ -1,0 +1,20 @@
+{
+  "name": "nodejs-eccommurse-api",
+  "version": "1.0.0",
+  "description": "NodeJS API ",
+  "main": "./src/app.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "author": "KIINNO",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "mongoose": "^7.0.3",
+    "morgan": "^1.10.0",
+    "slugify": "^1.6.6"
+  }
+}
