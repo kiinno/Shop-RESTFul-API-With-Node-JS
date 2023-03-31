@@ -4,7 +4,8 @@
   "description": "NodeJS API ",
   "main": "./src/app.js",
   "scripts": {
-    "dev": "nodemon server.js"
+    "start": "nodemon server.js",
+    "production": "set NODE_ENV=production && node ./server.js"
   },
   "author": "KIINNO",
   "license": "ISC",
@@ -13,6 +14,7 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-async-handler": "^1.2.0",
+    "express-validator": "^6.15.0",
     "mongoose": "^7.0.3",
     "morgan": "^1.10.0",
     "slugify": "^1.6.6"

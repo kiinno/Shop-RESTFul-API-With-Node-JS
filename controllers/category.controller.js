@@ -1,6 +1,7 @@
 const Category = require("../models/categoryModel");
 const slugify = require("slugify");
 const asyncHandler = require("express-async-handler");
+const ApiError = require("../utils/apiError");
 
 /**
  * @desc        Get All Categories
@@ -45,7 +46,10 @@ exports.addCategory = asyncHandler(async (req, res, next) => {
  * @reqParams [id]
  */
 exports.getSpecificCategory = asyncHandler(async (req, res, next) => {
-  const resault = await Category.findById(req.params.id, { __v: 0 });
+  const { id } = req.params;
+  const resault = await Category.findById(id, { __v: 0 });
+  if (!resault)
+    return next(new ApiError(`Can't Find This Category ${req.params.id}`, 400));
   res.status(200).json(resault);
 });
 
@@ -56,12 +60,10 @@ exports.getSpecificCategory = asyncHandler(async (req, res, next) => {
  * @reqParams [id]
  */
 exports.deleteCategory = asyncHandler(async (req, res, next) => {
-  const resault = await Category.findByIdAndDelete({ _id: req.params.id });
-  if (resault) res.status(200).json(resault);
-  res.status(404).json({
-    status: false,
-    id: req.params.id,
-  });
+  const resault = await Category.findByIdAndDelete(req.params.id);
+  if (!resault)
+    return next(new ApiError(`Can't Find This Category ${req.params.id}`, 400));
+  res.status(200).json(resault);
 });
 
 /**
@@ -85,5 +87,7 @@ exports.updateCategory = asyncHandler(async (req, res, next) => {
     },
     { new: true }
   );
+  if (!resault)
+    return next(new ApiError(`Can't Find This Category ${req.params.id}`, 400));
   res.status(200).json(resault);
 });

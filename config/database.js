@@ -14,12 +14,6 @@ const db_uri = DB_URI.replace("<username>", DB_USER)
  * Make Connection With Database
  * @return Connection || Error
  */
-exports.dbConnection = mongoose
-  .connect(db_uri)
-  .then((client) => {
-    console.info(`Database Connected To : ${client.connection.host}`);
-  })
-  .catch((client_err) => {
-    console.error(`Faild To Connect to Database :\n\t${client_err}`);
-    process.exit(1);
-  });
+exports.dbConnection = mongoose.connect(db_uri).then((client) => {
+  console.info(`Database Connected To : ${client.connection.host}`);
+});
