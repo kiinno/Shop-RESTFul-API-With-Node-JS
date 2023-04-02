@@ -15,7 +15,7 @@ const categorySchema = new mongoose.Schema(
     image: { type: String },
     __v: { type: Number, select: false },
   },
-  { timestamps: true, versionKey: false }
+  { timestamps: true }
 );
 const CategoryModel = mongoose.model("category", categorySchema);
 

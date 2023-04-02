@@ -20,7 +20,14 @@ const SubCategorySchema = new mongoose.Schema(
     },
     __v: { type: Number, select: false },
   },
-  { timestamps: true, versionKey: false }
+  { timestamps: true }
 );
+
+// Mongoose Middleware To Populate Category Field When Find Query Incoming
+
+SubCategorySchema.pre(/^find/i, function (next) {
+  this.populate({ path: "category", select: "name" });
+  next();
+});
 
 module.exports = mongoose.model("SubCategory", SubCategorySchema);

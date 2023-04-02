@@ -1,0 +1,178 @@
+[
+  {
+    "name": "laptops",
+    "category": "642908ec8d978509813186f6",
+    "slug": "laptops"
+  },
+  {
+    "name": "desktops",
+    "category": "642908ec8d978509813186f6",
+    "slug": "desktops"
+  },
+  {
+    "name": "tablets",
+    "category": "642908ec8d978509813186f6",
+    "slug": "tablets"
+  },
+  {
+    "name": "servers",
+    "category": "642908ec8d978509813186f6",
+    "slug": "servers"
+  },
+  {
+    "name": "iPhone",
+    "category": "642908ec8d978509813186f6",
+    "slug": "iphone"
+  },
+  {
+    "name": "Samsung Galaxy",
+    "category": "642908ec8d978509813186f6",
+    "slug": "samsung-galaxy"
+  },
+  {
+    "name": "Google Pixel",
+    "category": "642908ec8d978509813186f6",
+    "slug": "google-pixel"
+  },
+  {
+    "name": "OnePlus",
+    "category": "642908ec8d978509813186f6",
+    "slug": "oneplus"
+  },
+  {
+    "name": "televisions",
+    "category": "642908ec8d978509813186f6",
+    "slug": "televisions"
+  },
+  {
+    "name": "home theater systems",
+    "category": "642908ec8d978509813186f6",
+    "slug": "home-theater-systems"
+  },
+  {
+    "name": "gaming consoles",
+    "category": "642908ec8d978509813186f6",
+    "slug": "gaming-consoles"
+  },
+  {
+    "name": "fitness trackers",
+    "category": "642908ec8d978509813186f6",
+    "slug": "fitness-trackers"
+  },
+  {
+    "name": "smartwatches",
+    "category": "642908ec8d978509813186f6",
+    "slug": "smartwatches"
+  },
+  {
+    "name": "virtual reality headsets",
+    "category": "642908ec8d978509813186f6",
+    "slug": "virtual-reality-headsets"
+  },
+  {
+    "name": "digital single-lens reflex (DSLR) cameras",
+    "category": "642908ec8d978509813186f6",
+    "slug": "digital-single-lens-reflex-dslr-cameras"
+  },
+  {
+    "name": "mirrorless cameras",
+    "category": "642908ec8d978509813186f6",
+    "slug": "mirrorless-cameras"
+  },
+  {
+    "name": "action cameras",
+    "category": "642908ec8d978509813186f6",
+    "slug": "action-cameras"
+  },
+  {
+    "name": "instant cameras",
+    "category": "642908ec8d978509813186f6",
+    "slug": "instant-cameras"
+  },
+  {
+    "name": "headphones",
+    "category": "642908ec8d978509813186f6",
+    "slug": "headphones"
+  },
+  {
+    "name": "speakers",
+    "category": "642908ec8d978509813186f6",
+    "slug": "speakers"
+  },
+  {
+    "name": "soundbars",
+    "category": "642908ec8d978509813186f6",
+    "slug": "soundbars"
+  },
+  {
+    "name": "audio receivers",
+    "category": "642908ec8d978509813186f6",
+    "slug": "audio-receivers"
+  },
+  {
+    "name": "Fiction",
+    "category": "642908ec8d978509813186fb",
+    "slug": "fiction"
+  },
+  {
+    "name": "Non-fiction",
+    "category": "642908ec8d978509813186fb",
+    "slug": "non-fiction"
+  },
+  {
+    "name": "Mystery",
+    "category": "642908ec8d978509813186fb",
+    "slug": "mystery"
+  },
+  {
+    "name": "Romance",
+    "category": "642908ec8d978509813186fb",
+    "slug": "romance"
+  },
+  {
+    "name": "Science Fiction",
+    "category": "642908ec8d978509813186fb",
+    "slug": "science-fiction"
+  },
+  {
+    "name": "Fantasy",
+    "category": "642908ec8d978509813186fb",
+    "slug": "fantasy"
+  },
+  {
+    "name": "Biography",
+    "category": "642908ec8d978509813186fb",
+    "slug": "biography"
+  },
+  {
+    "name": "Autobiography",
+    "category": "642908ec8d978509813186fb",
+    "slug": "autobiography"
+  },
+  {
+    "name": "History",
+    "category": "642908ec8d978509813186fb",
+    "slug": "history"
+  },
+  { "name": "Art", "category": "642908ec8d978509813186fb", "slug": "art" },
+  {
+    "name": "Cooking",
+    "category": "642908ec8d978509813186fb",
+    "slug": "cooking"
+  },
+  {
+    "name": "Travel",
+    "category": "642908ec8d978509813186fb",
+    "slug": "travel"
+  },
+  {
+    "name": "Health and Wellness",
+    "category": "642908ec8d978509813186fb",
+    "slug": "health-and-wellness"
+  },
+  {
+    "name": "Business",
+    "category": "642908ec8d978509813186fb",
+    "slug": "business"
+  }
+]

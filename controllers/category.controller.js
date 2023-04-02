@@ -1,93 +1,52 @@
-const Category = require("../models/categoryModel");
-const slugify = require("slugify");
-const asyncHandler = require("express-async-handler");
-const ApiError = require("../utils/apiError");
+const Category = require("../models/category.model");
+const factoryHandlers = require("./factory.controller");
+
+const expressAsyncHandler = require("express-async-handler");
+
+exports.nestedRouteFilterObj = expressAsyncHandler(async (req, _, next) => {
+  const { categoryId } = req.params;
+  if (categoryId) {
+    req.filterObj = { category: categoryId };
+    req.body.category = categoryId;
+  }
+  next();
+});
 
 /**
  * @desc        Get All Categories
- * @route       GET api/v1/categories
+ * @route       (GET) api/v1/categories
  * @access      Public
  */
-exports.getCategories = asyncHandler(async (req, res, next) => {
-  const page = +req.query.page || 1;
-  const limit = +req.query.limit || 5;
-  const skip = (page - 1) * limit;
-  const resault = await Category.find({}, { __v: 0 }).skip(skip).limit(limit);
-  res.status(200).json({
-    resault: Object.keys(resault).length,
-    data: resault,
-    page: page,
-  });
-});
+exports.getCategories = factoryHandlers.getAllDocuments(Category);
 
 /**
- * @desc          Create Category
- * @route         POST api/v1/categories
- * @access        Private
- * @requestBody   JSON [name*, image]
+ * @desc        Create New Category
+ * @route       (POST) api/v1/categories
+ * @access      Private
  */
-exports.addCategory = asyncHandler(async (req, res, next) => {
-  const resault = await Category.create({
-    name: req.body.name,
-    slug: slugify(req.body.name, {
-      lower: true,
-      replacement: "-",
-      strict: true,
-      trim: true,
-    }),
-  });
-  res.status(201).json(resault);
-});
+exports.createCategory = factoryHandlers.createOne(Category);
 
 /**
- * @desc Get Specific Category By ID
- * @route GET api/v1/categories/:id
- * @access Public
- * @reqParams [id]
+ * @desc        Get All Categories
+ * @route       (GET) api/v1/categories
+ * @httpReqParams JSON [id*]
+ * @access      Public
  */
-exports.getSpecificCategory = asyncHandler(async (req, res, next) => {
-  const { id } = req.params;
-  const resault = await Category.findById(id, { __v: 0 });
-  if (!resault)
-    return next(new ApiError(`Can't Find This Category ${req.params.id}`, 400));
-  res.status(200).json(resault);
-});
+exports.getSpecificCategory = factoryHandlers.getOne(Category);
 
 /**
- * @desc Delete Specific Category By ID
- * @route DELETE api/v1/categories/:id
- * @access Private
- * @reqParams [id]
+ * @desc        Get All Categories
+ * @route       (DELETE) api/v1/categories
+ * @httpReqParams JSON [id*]
+ * @access      Private
  */
-exports.deleteCategory = asyncHandler(async (req, res, next) => {
-  const resault = await Category.findByIdAndDelete(req.params.id);
-  if (!resault)
-    return next(new ApiError(`Can't Find This Category ${req.params.id}`, 400));
-  res.status(200).json(resault);
-});
+exports.deleteCategory = factoryHandlers.deleteOne(Category);
 
 /**
- * @desc Update Category By ID
- * @route PUT api/v1/categories/:id
- * @access Private
- * @reqParams [id]
- * @reqBody JSON [name, image]
+ * @desc        Update Specific Category
+ * @route       (PUT) api/v1/categories
+ * @httpReqParams JSON [id*]
+ * @httpReqBody JSON [name*]
+ * @access      Private
  */
-exports.updateCategory = asyncHandler(async (req, res, next) => {
-  const resault = await Category.findByIdAndUpdate(
-    req.params.id,
-    {
-      name: req.body.name,
-      slug: slugify(req.body.name, {
-        lower: true,
-        replacement: "-",
-        strict: true,
-        trim: true,
-      }),
-    },
-    { new: true }
-  );
-  if (!resault)
-    return next(new ApiError(`Can't Find This Category ${req.params.id}`, 400));
-  res.status(200).json(resault);
-});
+exports.updateCategory = factoryHandlers.updateOne(Category);

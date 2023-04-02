@@ -9,13 +9,16 @@ dotenv.config({
   path: "./config/config.env",
 });
 
+// Import Auxalaris
 const dbConnection = require("./config/database");
 const errorHandlerMiddleware = require("./middlewares/globalError");
 const ApiError = require("./utils/apiError");
-const categoryRouter = require("./api/categoryRouter");
-const subCategoryRouter = require("./api/subCategory.route");
-const brandRouter = require("./api/brandRouter");
-const productRouter = require("./api/product.route");
+
+// Import Routers
+const categoryApp = require("./routers/category.router");
+const subCategoryApp = require("./routers/sub-category.route");
+const brandApp = require("./routers/brand.router");
+const productApp = require("./routers/product.route");
 
 // Setup HTTP-Req Logger
 if (process.env.NODE_ENV === "development") {
@@ -30,10 +33,10 @@ if (process.env.NODE_ENV === "development") {
 app.use(cors(), express.json());
 
 // Mount Routes
-app.use("/api/v1/categories", categoryRouter);
-app.use("/api/v1/subcategories", subCategoryRouter);
-app.use("/api/v1/brands", brandRouter);
-app.use("/api/v1/products", productRouter);
+app.use("/api/v1/categories", categoryApp);
+app.use("/api/v1/subcategories", subCategoryApp);
+app.use("/api/v1/brands", brandApp);
+app.use("/api/v1/products", productApp);
 
 // Not Found Routes Handler
 app.use("*", (req, res, next) => {

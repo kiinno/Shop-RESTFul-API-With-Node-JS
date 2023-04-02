@@ -1,7 +1,6 @@
 const { check } = require("express-validator");
-const validationMiddleware = require("./validateResault");
-const SubCategory = require("../../models/subCategoryModel");
-const Category = require("../../models/categoryModel");
+const SubCategory = require("../../models/sub-category.model");
+const Category = require("../../models/category.model");
 const { default: mongoose } = require("mongoose");
 
 module.exports.createProductValidator = [
@@ -139,19 +138,14 @@ module.exports.createProductValidator = [
     .withMessage("Product Rating Quantity Must Be Number")
     .isNumeric({ min: 1 })
     .withMessage("Ratings Quantity Must Be Above Or Equal 1"),
-
-  validationMiddleware,
 ];
 
 module.exports.deleteProductValidator = [
   check("id").isMongoId().withMessage("Invalid Product ID"),
-  validationMiddleware,
 ];
 module.exports.updateSpecificProductValidator = [
   check("id").isMongoId().withMessage("Invalid Product ID"),
-  validationMiddleware,
 ];
 module.exports.getSpecificProductValidator = [
   check("id").isMongoId().withMessage("Invalid Product ID"),
-  validationMiddleware,
 ];

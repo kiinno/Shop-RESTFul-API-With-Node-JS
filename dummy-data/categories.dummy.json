@@ -1,0 +1,34 @@
+[
+  { "name": "Electronics", "slug": "electronics" },
+  { "name": "Clothing", "slug": "clothing" },
+  { "name": "Home Goods", "slug": "home-goods" },
+  { "name": "Toys", "slug": "toys" },
+  { "name": "Beauty", "slug": "beauty" },
+  { "name": "Books", "slug": "books" },
+  { "name": "Sporting Goods", "slug": "sporting-goods" },
+  { "name": "Pets", "slug": "pets" },
+  { "name": "Food and Beverage", "slug": "food-and-beverage" },
+  { "name": "Health and Wellness", "slug": "health-and-wellness" },
+  { "name": "Automotive", "slug": "automotive" },
+  { "name": "Office Supplies", "slug": "office-supplies" },
+  { "name": "Jewelry", "slug": "jewelry" },
+  { "name": "Hobbies", "slug": "hobbies" },
+  { "name": "Travel", "slug": "travel" },
+  { "name": "Music", "slug": "music" },
+  { "name": "Movies and TV", "slug": "movies-and-tv" },
+  { "name": "Art and Crafts", "slug": "art-and-crafts" },
+  { "name": "Home Improvement", "slug": "home-improvement" },
+  { "name": "Garden and Outdoors", "slug": "garden-and-outdoors" },
+  { "name": "Baby and Kids", "slug": "baby-and-kids" },
+  {
+    "name": "Industrial and Scientific",
+    "slug": "industrial-and-scientific"
+  },
+  {
+    "name": "Tools and Home Improvement",
+    "slug": "tools-and-home-improvement"
+  },
+  { "name": "Appliances", "slug": "appliances" },
+  { "name": "Entertainment", "slug": "entertainment" },
+  { "name": "Software", "slug": "software" }
+]
